@@ -1,0 +1,25 @@
+<div *ngIf="!action">
+  <a href="javascript:void(0)" (click)="location.back()">Назад</a>
+  id user {{user.id}}
+</div>
+<br>
+<div>
+  <div>
+    <label for="login">Логин</label>
+    <input id="login" type="text" [(ngModel)]="user.login">
+  </div>
+  <div>
+    <label for="fullNames">ФИО</label>
+    <input id="fullNames" type="text" [(ngModel)]="user.fullNames">
+  </div>
+  <div>
+    <label for="phone">Номер</label>
+    <input id="phone" type="text" [(ngModel)]="user.phone">
+  </div>
+  <div>
+    <label for="address">Адрес</label>
+    <input id="address" type="text" [(ngModel)]="user.address">
+  </div>
+  <button
+    (click)="action ? create() : update()">{{action === 'create' ? 'Создать пользователя' : 'сохранить и выйти'}}</button>
+</div>
